@@ -15,15 +15,15 @@
 #include "WemoManager.h"
 #include "CallbackFunction.h"
 
-#define mqtt_clientid ""					// Your MQTT client ID
-#define mqtt_server ""						// Your MQTT broker IP
-#define mqtt_user ""						// Your MQTT username
-#define mqtt_password "" 					// Your MQTT password
+#define mqtt_clientid ""					   // Your MQTT client ID
+#define mqtt_server ""						   // Your MQTT broker IP
+#define mqtt_user ""						      // Your MQTT username
+#define mqtt_password "" 					   // Your MQTT password
 
-const int relayPin = 5;    
+const int relayPin = 5;                   // Change to your GPIO
 const char* wifi_ssid = "";					// Your SSID
 const char* wifi_password = "";				// Your PSK
-const char* friendlyName = "";             	// Alexa will use this name to identify your device
+const char* friendlyName = "";            // Alexa will use this name to identify your device
 const unsigned int webserverPort = 9876;
 const char* stateTopic = "";				// MQTT Subscribe Topic
 const char* stateTopic2 = "";				// MQTT Publush Topic
