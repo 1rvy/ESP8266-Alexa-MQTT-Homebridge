@@ -11,4 +11,7 @@ State changes are reflected via MQTT publish, e.g if Alexa/Homebridge/MQTT instr
 I recommend downloading and experimenting with Node-Red (https://nodered.org/) if using MQTT control as well as MQTT Dash for Android (https://play.google.com/store/apps/details?id=net.routix.mqttdash&hl=en_GB)
 
 ![Alt text](20170216_220844.jpg?raw=true "Heater control")
+
+The Wemos is powered by a 240V to 5V power supply (old HTC USB charger!) connected to micro USB, the relay is the Wemos relay shield, very small and neat package that is easily concealable inside the heater base.
+
 ![Alt text](20170311_120629.jpg?raw=true "Hidden in base!")
