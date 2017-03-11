@@ -11,3 +11,4 @@ State changes are reflected via MQTT publish, e.g if Alexa/Homebridge/MQTT instr
 I recommend downloading and experimenting with Node-Red (https://nodered.org/) if using MQTT control as well as MQTT Dash for Android (https://play.google.com/store/apps/details?id=net.routix.mqttdash&hl=en_GB)
 
 ![Alt text](20170216_220844.jpg?raw=true "Heater control")
+![Alt text](20170311_120629.jpg?raw=true "Hidden in base!")
