@@ -9,3 +9,5 @@ I have this deployed on a Wemos D1 Pro controlling a relay switching on a heater
 State changes are reflected via MQTT publish, e.g if Alexa/Homebridge/MQTT instruction turns on the device it pushes MQTT publish, I use MQTT Dash on Android and this monitors the publish string for state changes.
 
 I recommend downloading and experimenting with Node-Red (https://nodered.org/) if using MQTT control as well as MQTT Dash for Android (https://play.google.com/store/apps/details?id=net.routix.mqttdash&hl=en_GB)
+
+<img>20170216_211633.jpg</img>
