@@ -1,4 +1,4 @@
-#Arduino Esp8266 Alexa Wemo switch emulator
+#Arduino IDE Sketch for ESP8266 (Wemos D1 Pro) Alexa Wemo switch emulator with MQTT and web control
 
 This project is developed from witnessmenow's great fork (https://github.com/witnessmenow/esp8266-alexa-wemo-emulator) of kakopappa's original sketch (https://github.com/kakopappa/arduino-esp8266-alexa-multiple-wemo-switch.
 
