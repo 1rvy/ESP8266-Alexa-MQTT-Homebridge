@@ -10,6 +10,4 @@ State changes are reflected via MQTT publish, e.g if Alexa/Homebridge/MQTT instr
 
 I recommend downloading and experimenting with Node-Red (https://nodered.org/) if using MQTT control as well as MQTT Dash for Android (https://play.google.com/store/apps/details?id=net.routix.mqttdash&hl=en_GB)
 
-<img>https://github.com/1rvy/esp8266-alexa-mqtt-homebridge/blob/master/20170216_211633.jpg</img>
-<img>https://github.com/1rvy/esp8266-alexa-mqtt-homebridge/blob/master/20170216_211639.jpg</img>
-<img>https://github.com/1rvy/esp8266-alexa-mqtt-homebridge/blob/master/20170216_220844.jpg</img>
+![Alt text](20170216_220844.jpg?raw=true "Heater control")
