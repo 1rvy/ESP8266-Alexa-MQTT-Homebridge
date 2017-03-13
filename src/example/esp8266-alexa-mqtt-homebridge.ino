@@ -12,18 +12,18 @@
 #include "WemoManager.h"
 #include "CallbackFunction.h"
 
-#define mqtt_clientid "wemos1"
-#define mqtt_server "192.168.6.12"
-#define mqtt_user "aimqtt"
-#define mqtt_password "mqttuser1" 
+#define mqtt_clientid ""
+#define mqtt_server ""
+#define mqtt_user ""
+#define mqtt_password "" 
 
 const int relayPin = 5;    
-const char* wifi_ssid = "bobthebuilder";
-const char* wifi_password = "scoopmuckanddizzy";
-const char* friendlyName = "Conservatory Heater";             
+const char* wifi_ssid = "";
+const char* wifi_password = "";
+const char* friendlyName = "";             
 const unsigned int webserverPort = 9876;
-const char* stateTopic = "sensor2/control";
-const char* stateTopic2 = "sensor2/state";
+const char* stateTopic = "sensor/control";
+const char* stateTopic2 = "sensor/state";
 
 boolean connectWifi();
 
@@ -68,9 +68,16 @@ void setup(){
 
   Serial.print("Configuring OTA device...");
   TelnetServer.begin();   
-  ArduinoOTA.onStart([]() {Serial.println("OTA starting...");});
-  ArduinoOTA.onEnd([]() {Serial.println("OTA update finished!");Serial.println("Rebooting...");});
-  ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {Serial.printf("OTA in progress: %u%%\r\n", (progress / (total / 100)));});  
+ ArduinoOTA.setPassword((const char *)"");    //OTA password here
+  ArduinoOTA.onStart([]() {
+    Serial.println("Start");
+  });
+  ArduinoOTA.onEnd([]() {
+    Serial.println("\nEnd");
+  });
+  ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
+    Serial.printf("Progress: %u%%\r", (progress / (total / 100)));
+  });
   ArduinoOTA.onError([](ota_error_t error) {
     Serial.printf("Error[%u]: ", error);
     if (error == OTA_AUTH_ERROR) Serial.println("Auth Failed");
@@ -79,7 +86,6 @@ void setup(){
     else if (error == OTA_RECEIVE_ERROR) Serial.println("Receive Failed");
     else if (error == OTA_END_ERROR) Serial.println("End Failed");
   });
-  ArduinoOTA.setPassword((const char *)"Sivtec22"); 
   ArduinoOTA.begin();
   Serial.println("OK");
 } 
