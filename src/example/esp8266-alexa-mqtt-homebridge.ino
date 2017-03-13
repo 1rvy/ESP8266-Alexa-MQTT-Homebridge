@@ -40,14 +40,12 @@ PubSubClient client(espClient);
 void setup(){ 
   Serial.begin(115200);
   WiFi.mode(WIFI_STA);
-  WiFi.disconnect();
-  delay(100);
-  Serial.print("Connecting Wifi: ");
+  Serial.print("Connecting to ");
   Serial.println(wifi_ssid);
   WiFi.begin(wifi_ssid, wifi_password);
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(".");
-    delay(500);
+  while (WiFi.waitForConnectResult() != WL_CONNECTED) {
+    Serial.println("Connection Failed! Rebooting...");
+    delay(5000);
   }
   Serial.println("");
   Serial.println("WiFi connected");
@@ -63,11 +61,9 @@ void setup(){
   client.setCallback(callback); 
   
   pinMode(relayPin, OUTPUT);
-  delay(10);
   digitalWrite(relayPin, LOW);
 
   Serial.print("Configuring OTA device...");
-  TelnetServer.begin();   
   ArduinoOTA.setPassword((const char *)"");    //OTA password here (if required)
   ArduinoOTA.onStart([]() {
     Serial.println("Start");
