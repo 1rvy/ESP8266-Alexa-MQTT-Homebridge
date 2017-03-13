@@ -12,18 +12,18 @@
 #include "WemoManager.h"
 #include "CallbackFunction.h"
 
-#define mqtt_clientid ""
-#define mqtt_server ""
-#define mqtt_user ""
-#define mqtt_password "" 
+#define mqtt_clientid ""                    //MQTT ClientID here
+#define mqtt_server ""                      //MQTT Server IP here
+#define mqtt_user ""                        //MQTT Username here
+#define mqtt_password ""                    //MQTT Password here
 
-const int relayPin = 5;    
-const char* wifi_ssid = "";
-const char* wifi_password = "";
-const char* friendlyName = "";             
+const int relayPin = 5;                     //Replace with your GPIO
+const char* wifi_ssid = "";                 //SSID here
+const char* wifi_password = "";             //PSK here
+const char* friendlyName = "";              //Name for Alexa to call here
 const unsigned int webserverPort = 9876;
-const char* stateTopic = "sensor/control";
-const char* stateTopic2 = "sensor/state";
+const char* stateTopic = "sensor/control";  //MQTT subscribe topic here
+const char* stateTopic2 = "sensor/state";   //MQTT publish topic here
 
 boolean connectWifi();
 
@@ -68,7 +68,7 @@ void setup(){
 
   Serial.print("Configuring OTA device...");
   TelnetServer.begin();   
- ArduinoOTA.setPassword((const char *)"");    //OTA password here
+  ArduinoOTA.setPassword((const char *)"");    //OTA password here (if required)
   ArduinoOTA.onStart([]() {
     Serial.println("Start");
   });
